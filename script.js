@@ -15,8 +15,8 @@ function detectOS() {
 
 // Store URLs (replace with actual app store URLs)
 const storeUrls = {
-  iOS: "https://apps.apple.com/app/pollit/id123456789", // Replace with actual App Store URL
-  Android: "https://play.google.com/store/apps/details?id=com.pollit.app", // Replace with actual Play Store URL
+  iOS: "https://apps.apple.com/kr/app/pollit-%ED%8F%B4%EC%9E%87-%EA%B0%80%EC%B9%98%EA%B4%80-%EB%B0%8F-%EC%84%B1%ED%96%A5-%EA%B8%B0%EB%B0%98-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%95%B1/id6478050884", // Replace with actual App Store URL
+  Android: "https://play.google.com/store/apps/details?id=com.pollitapp", // Replace with actual Play Store URL
 };
 
 // Download button click handler
@@ -65,20 +65,6 @@ function handleGoogleDownload() {
 
   window.open(url, "_blank");
 }
-
-// Scroll Animation Observer
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-in");
-    }
-  });
-}, observerOptions);
 
 // Smooth scrolling for anchor links
 function smoothScroll(target) {
@@ -199,12 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
       handleGoogleDownload();
     });
   });
-
-  // Initialize scroll animations
-  const animatedElements = document.querySelectorAll(
-    ".value-card, .review-card, .question-card"
-  );
-  animatedElements.forEach((el) => observer.observe(el));
 
   // Initialize lazy loading
   lazyLoadImages();

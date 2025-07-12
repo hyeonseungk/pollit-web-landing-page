@@ -69,17 +69,6 @@ npx http-server -p 8000
 
 ## ⚙️ 커스터마이징
 
-### 1. 앱스토어 링크 변경
-
-`script.js` 파일에서 다음 부분을 수정하세요:
-
-```javascript
-const storeUrls = {
-    iOS: 'https://apps.apple.com/app/pollit/id123456789', // 실제 App Store URL로 변경
-    Android: 'https://play.google.com/store/apps/details?id=com.pollit.app' // 실제 Play Store URL로 변경
-};
-```
-
 ### 2. 브랜드 컬러 변경
 
 `styles.css` 파일에서 CSS 변수를 사용하여 쉽게 변경 가능:
