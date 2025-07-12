@@ -1,0 +1,792 @@
+/* Font Definitions */
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #6119e6;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #6119e6, #e8dff4);
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f7ff 0%, #e8dff4 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Cafe24Oneprettynight', sans-serif;
+    color: #6119e6;
+    letter-spacing: -0.5px;
+    z-index: 10;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(97, 25, 230, 0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-20px, -20px) rotate(180deg); }
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    animation: slideInUp 0.8s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 0.1rem;
+    animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: #6119e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(97, 25, 230, 0.3);
+    min-width: 200px;
+}
+
+.cta-button:hover {
+    background: #4a13b8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(97, 25, 230, 0.4);
+}
+
+.store-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 1rem;
+    justify-content: flex-start;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 140px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 0 16px;
+    margin: 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.store-btn.apple {
+    background: #000;
+    color: white;
+    border-radius: 8px;
+}
+
+.store-btn.google {
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.store-btn.apple:hover {
+    background: #333;
+}
+
+.store-btn.google:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+.store-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.store-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.store-text {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Phone Mockup */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    width: 280px;
+    height: 560px;
+    position: relative;
+    animation: slideInRight 0.8s ease-out 0.6s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.phone-frame {
+    width: 100%;
+    height: 100%;
+    background: #1c1c1e;
+    border-radius: 40px;
+    padding: 8px;
+    position: relative;
+    box-shadow: 
+        0 0 0 2px #333,
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.app-content {
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.question-image {
+    width: 100%;
+    max-width: 140px;
+    margin-bottom: 15px;
+}
+
+.question-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.question-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    padding: 0 8px;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option {
+    background: #f8f7ff;
+    border: 1px solid #e8dff4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    background: #e8dff4;
+    border-color: #6119e6;
+}
+
+.option-number {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6119e6;
+    min-width: 15px;
+}
+
+.option-text {
+    font-size: 11px;
+    color: #333;
+    line-height: 1.3;
+    text-align: left;
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Values Section */
+.values-section {
+    background: #f8f7ff;
+    text-align: center;
+}
+
+.values-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex: 0 0 250px;
+    min-width: 250px;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #6119e6;
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    color: #666;
+}
+
+.question-examples {
+    margin-top: 4rem;
+}
+
+.question-examples h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.questions-grid .question-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.questions-grid .question-card:hover {
+    transform: translateY(-5px);
+}
+
+.question-emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.questions-grid .question-card p {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.question-card.more-questions {
+    background: linear-gradient(135deg, #6119e6, #8b5cf6);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.question-card.more-questions p {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.question-card.more-questions .more-text {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.question-card.more-questions:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Reviews Section */
+.reviews-section {
+    background: white;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: #f8f7ff;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.reviewer {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Final CTA */
+.final-cta {
+    background: linear-gradient(135deg, #6119e6, #8b5cf6);
+    color: white;
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.final-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.final-cta .cta-button {
+    background: white;
+    color: #6119e6;
+    margin-bottom: 1rem;
+}
+
+.final-cta .cta-button:hover {
+    background: #f8f7ff;
+}
+
+.final-cta .store-btn.apple {
+    background: #000;
+    color: white;
+}
+
+.final-cta .store-btn.google {
+    background: white;
+    color: #333;
+}
+
+.final-cta .store-btn.apple:hover {
+    background: #333;
+}
+
+.final-cta .store-btn.google:hover {
+    background: #f5f5f5;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-logo .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6119e6;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+    color: #ccc;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #6119e6;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #555;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-logo {
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .phone-mockup {
+        width: 240px;
+        height: 480px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .values-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        max-width: 400px;
+    }
+    
+    .value-card {
+        flex: none;
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .questions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+    
+    .store-buttons {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        top: 15px;
+        left: 15px;
+        font-size: 27px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .phone-mockup {
+        width: 200px;
+        height: 400px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .store-btn {
+        width: 130px;
+        height: 44px;
+        padding: 0 12px;
+        gap: 6px;
+    }
+    
+    .store-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .store-text {
+        font-size: 12px;
+    }
+    
+    .question-emoji {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .questions-grid .question-card {
+        min-height: 120px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .questions-grid .question-card p {
+        font-size: 1rem;
+    }
+    
+    .question-card.more-questions {
+        min-height: 120px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Scroll animations */
+@media (prefers-reduced-motion: no-preference) {
+    .value-card,
+    .review-card,
+    .questions-grid .question-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: scrollFadeIn 0.6s ease-out forwards;
+    }
+    
+    .value-card:nth-child(1) { animation-delay: 0.1s; }
+    .value-card:nth-child(2) { animation-delay: 0.2s; }
+    
+    .review-card:nth-child(1) { animation-delay: 0.1s; }
+    .review-card:nth-child(2) { animation-delay: 0.2s; }
+    .review-card:nth-child(3) { animation-delay: 0.3s; }
+}
+
+@keyframes scrollFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+} 
