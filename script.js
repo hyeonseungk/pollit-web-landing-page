@@ -206,11 +206,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (os === "iOS") {
       appleBtn.style.order = "1";
       googleBtn.style.order = "2";
-      appleBtn.style.transform = "scale(1.1)";
+      // appleBtn.style.transform = "scale(1.1)"; // 제거: 크기 차이 없애기
     } else if (os === "Android") {
       googleBtn.style.order = "1";
       appleBtn.style.order = "2";
-      googleBtn.style.transform = "scale(1.1)";
+      // googleBtn.style.transform = "scale(1.1)"; // 제거: 크기 차이 없애기
     }
   });
 

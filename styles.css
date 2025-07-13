@@ -144,6 +144,22 @@ h1, h2, h3 {
     animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
+.hero-subtitle-mobile {
+    display: none;
+}
+
+.section-title-mobile {
+    display: none;
+}
+
+.question-examples-title-mobile {
+    display: none;
+}
+
+.final-cta-title-mobile {
+    display: none;
+}
+
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -868,6 +884,38 @@ section {
         font-size: 1.1rem;
     }
     
+    .hero-subtitle-desktop {
+        display: none;
+    }
+    
+    .hero-subtitle-mobile {
+        display: block;
+    }
+    
+    .section-title-desktop {
+        display: none;
+    }
+    
+    .section-title-mobile {
+        display: block;
+    }
+    
+    .question-examples-title-desktop {
+        display: none;
+    }
+    
+    .question-examples-title-mobile {
+        display: block;
+    }
+    
+    .final-cta-title-desktop {
+        display: none;
+    }
+    
+    .final-cta-title-mobile {
+        display: block;
+    }
+    
     .phone-mockup {
         width: 220px;
         height: 440px;
@@ -1013,6 +1061,38 @@ section {
     
     .hero-subtitle {
         font-size: 1rem;
+    }
+    
+    .hero-subtitle-desktop {
+        display: none;
+    }
+    
+    .hero-subtitle-mobile {
+        display: block;
+    }
+    
+    .section-title-desktop {
+        display: none;
+    }
+    
+    .section-title-mobile {
+        display: block;
+    }
+    
+    .question-examples-title-desktop {
+        display: none;
+    }
+    
+    .question-examples-title-mobile {
+        display: block;
+    }
+    
+    .final-cta-title-desktop {
+        display: none;
+    }
+    
+    .final-cta-title-mobile {
+        display: block;
     }
     
     .phone-mockup {
