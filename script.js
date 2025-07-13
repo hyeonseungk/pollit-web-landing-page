@@ -339,6 +339,21 @@ function initAnalyticsTracking() {
       }
     });
   }
+
+  // Instagram 링크 클릭 추적
+  const instagramLink = document.querySelector(".social-link.instagram");
+  if (instagramLink) {
+    instagramLink.addEventListener("click", function (e) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "social_media_click", {
+          event_category: "Social Media",
+          event_label: "Instagram",
+          social_platform: "Instagram",
+          custom_parameter_1: "instagram_footer",
+        });
+      }
+    });
+  }
 }
 
 // 페이지 로드 시 추적 초기화
