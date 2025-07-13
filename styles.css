@@ -81,6 +81,11 @@ h1, h2, h3 {
     z-index: -1;
 }
 
+/* WebP 지원 시 WebP 이미지 사용 */
+.webp .hero::before {
+    background-image: url('public/top-background.webp');
+}
+
 .hero-logo {
     position: absolute;
     top: 40px;

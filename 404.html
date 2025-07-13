@@ -238,7 +238,10 @@
     <div class="error-page">
         <div class="error-container">
             <div class="error-logo">
-                <img src="public/logo.png" alt="폴잇 로고" class="error-logo-image">
+                <picture>
+                    <source srcset="public/logo.webp" type="image/webp">
+                    <img src="public/logo.png" alt="폴잇 로고" class="error-logo-image">
+                </picture>
                 <span class="error-logo-text">폴잇</span>
             </div>
             
@@ -305,8 +308,28 @@
     </div>
     
     <script>
+        // WebP 지원 감지
+        function supportsWebP() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1;
+            canvas.height = 1;
+            return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+        }
+
+        // WebP 지원 여부에 따라 CSS 클래스 추가
+        function initWebPSupport() {
+            if (supportsWebP()) {
+                document.documentElement.classList.add('webp');
+            } else {
+                document.documentElement.classList.add('no-webp');
+            }
+        }
+
         // 페이지 로드 시 현재 URL을 이메일에 포함
         document.addEventListener('DOMContentLoaded', function() {
+            // WebP 지원 초기화
+            initWebPSupport();
+            
             const reportLink = document.querySelector('.report-link');
             const currentURL = window.location.href;
             const emailBody = `문제가 발생한 페이지 주소: ${currentURL}%0D%0A%0D%0A추가 정보:%0D%0A`;

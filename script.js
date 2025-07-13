@@ -362,3 +362,79 @@ document.addEventListener("DOMContentLoaded", function () {
     initAnalyticsTracking();
   }
 });
+
+// WebP 지원 감지
+function supportsWebP() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1;
+  canvas.height = 1;
+  return canvas.toDataURL("image/webp").indexOf("data:image/webp") === 0;
+}
+
+// WebP 지원 여부에 따라 CSS 클래스 추가
+function initWebPSupport() {
+  if (supportsWebP()) {
+    document.documentElement.classList.add("webp");
+  } else {
+    document.documentElement.classList.add("no-webp");
+  }
+}
+
+// 앱 다운로드 버튼 클릭 트래킹
+function trackAppDownload(platform, location) {
+  gtag("event", "app_download_click", {
+    platform: platform,
+    location: location,
+    app_name: "pollit",
+    event_category: "engagement",
+    event_label: platform + "_" + location,
+  });
+}
+
+// Instagram 링크 클릭 트래킹
+function trackInstagramClick(location) {
+  gtag("event", "instagram_click", {
+    location: location,
+    social_platform: "instagram",
+    event_category: "social_engagement",
+    event_label: "instagram_" + location,
+  });
+}
+
+// 페이지 로드 시 초기화
+document.addEventListener("DOMContentLoaded", function () {
+  // WebP 지원 초기화
+  initWebPSupport();
+
+  // 앱 다운로드 버튼 이벤트 리스너
+  const downloadButtons = [
+    { id: "appleBtn", platform: "ios", location: "hero" },
+    { id: "googleBtn", platform: "android", location: "hero" },
+    { id: "appleBtn2", platform: "ios", location: "footer" },
+    { id: "googleBtn2", platform: "android", location: "footer" },
+  ];
+
+  downloadButtons.forEach((button) => {
+    const element = document.getElementById(button.id);
+    if (element) {
+      element.addEventListener("click", function (e) {
+        trackAppDownload(button.platform, button.location);
+      });
+    }
+  });
+
+  // Instagram 링크 이벤트 리스너
+  const instagramLinks = document.querySelectorAll(
+    'a[href*="instagram.com/pollit.official"]'
+  );
+  instagramLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const location = this.closest(".footer")
+        ? "footer"
+        : this.closest(".helpful-links")
+        ? "404_page"
+        : "main";
+      trackInstagramClick(location);
+    });
+  });
+});
