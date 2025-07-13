@@ -271,4 +271,79 @@ window.PollitLanding = {
   handleDownload,
   handleAppleDownload,
   handleGoogleDownload,
+  initAnalyticsTracking,
 };
+
+// Google Analytics 클릭 이벤트 추적
+function initAnalyticsTracking() {
+  // Hero 섹션 App Store 버튼
+  const heroAppleBtn = document.getElementById("appleBtn");
+  if (heroAppleBtn) {
+    heroAppleBtn.addEventListener("click", function (e) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "app_download_click", {
+          event_category: "App Download",
+          event_label: "Hero App Store",
+          app_platform: "iOS",
+          button_location: "hero_section",
+          custom_parameter_1: "hero_app_store",
+        });
+      }
+    });
+  }
+
+  // Hero 섹션 Play Store 버튼
+  const heroGoogleBtn = document.getElementById("googleBtn");
+  if (heroGoogleBtn) {
+    heroGoogleBtn.addEventListener("click", function (e) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "app_download_click", {
+          event_category: "App Download",
+          event_label: "Hero Play Store",
+          app_platform: "Android",
+          button_location: "hero_section",
+          custom_parameter_1: "hero_play_store",
+        });
+      }
+    });
+  }
+
+  // CTA 섹션 App Store 버튼
+  const ctaAppleBtn = document.getElementById("appleBtn2");
+  if (ctaAppleBtn) {
+    ctaAppleBtn.addEventListener("click", function (e) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "app_download_click", {
+          event_category: "App Download",
+          event_label: "CTA App Store",
+          app_platform: "iOS",
+          button_location: "cta_section",
+          custom_parameter_1: "cta_app_store",
+        });
+      }
+    });
+  }
+
+  // CTA 섹션 Play Store 버튼
+  const ctaGoogleBtn = document.getElementById("googleBtn2");
+  if (ctaGoogleBtn) {
+    ctaGoogleBtn.addEventListener("click", function (e) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "app_download_click", {
+          event_category: "App Download",
+          event_label: "CTA Play Store",
+          app_platform: "Android",
+          button_location: "cta_section",
+          custom_parameter_1: "cta_play_store",
+        });
+      }
+    });
+  }
+}
+
+// 페이지 로드 시 추적 초기화
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof initAnalyticsTracking === "function") {
+    initAnalyticsTracking();
+  }
+});
