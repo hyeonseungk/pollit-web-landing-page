@@ -226,7 +226,7 @@ h1, h2, h3 {
     padding: 0 16px;
     margin: 0;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -274,8 +274,10 @@ h1, h2, h3 {
 
 .store-text {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Phone Mockup */
@@ -1119,7 +1121,9 @@ section {
     
     .store-text {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
     
     .question-emoji {
