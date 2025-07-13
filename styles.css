@@ -823,6 +823,14 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero::before {
+        background-image: url('public/top-background-mobile.png');
+    }
+    
+    .webp .hero::before {
+        background-image: url('public/top-background-mobile.webp');
+    }
+    
     .hero-logo {
         top: 20px;
         left: 20px;
@@ -862,6 +870,7 @@ section {
     .phone-mockup {
         width: 220px;
         height: 440px;
+        margin-top: 40px;
     }
     
     .section-title {
@@ -908,6 +917,7 @@ section {
     
     .social-media h4 {
         font-size: 16px;
+        text-align: center;
     }
     
     .social-links {
@@ -962,6 +972,14 @@ section {
 }
 
 @media (max-width: 480px) {
+    .hero::before {
+        background-image: url('public/top-background-mobile.png');
+    }
+    
+    .webp .hero::before {
+        background-image: url('public/top-background-mobile.webp');
+    }
+    
     .hero-logo {
         top: 15px;
         left: 15px;
@@ -999,6 +1017,7 @@ section {
     .phone-mockup {
         width: 180px;
         height: 360px;
+        margin-top: 40px;
     }
     
     .section-title {
@@ -1042,6 +1061,11 @@ section {
     
     .company-details h4 {
         font-size: 1.1rem;
+    }
+    
+    .social-media h4 {
+        font-size: 14px;
+        text-align: center;
     }
     
     .info-grid {
