@@ -301,8 +301,8 @@ h3 {
 
 /* Plain hero image (replacing phone mockup) */
 .hero-image {
-  width: 480px;
-  max-width: 63vw;
+  width: 384px;
+  max-width: 50vw;
   height: auto;
   display: block;
 }
@@ -1131,8 +1131,8 @@ section {
   }
 
   .hero-image {
-    width: 390px;
-    max-width: 90vw;
+    width: 312px;
+    max-width: 72vw;
   }
 
   .section-title {
@@ -1313,8 +1313,8 @@ section {
   }
 
   .hero-image {
-    width: 330px;
-    max-width: 90vw;
+    width: 264px;
+    max-width: 72vw;
   }
 
   .section-title {
