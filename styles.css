@@ -299,6 +299,14 @@ h3 {
   align-items: center;
 }
 
+/* Plain hero image (replacing phone mockup) */
+.hero-image {
+  width: 480px;
+  max-width: 63vw;
+  height: auto;
+  display: block;
+}
+
 .phone-mockup {
   width: 240px;
   height: 480px;
@@ -355,6 +363,14 @@ h3 {
   align-items: center;
   justify-content: center;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Hero screenshot inside phone */
+.phone-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .app-content {
@@ -1114,6 +1130,11 @@ section {
     margin-top: 40px;
   }
 
+  .hero-image {
+    width: 390px;
+    max-width: 90vw;
+  }
+
   .section-title {
     font-size: 2rem;
   }
@@ -1289,6 +1310,11 @@ section {
     width: 180px;
     height: 360px;
     margin-top: 40px;
+  }
+
+  .hero-image {
+    width: 330px;
+    max-width: 90vw;
   }
 
   .section-title {
