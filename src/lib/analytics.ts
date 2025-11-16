@@ -54,6 +54,16 @@ export const trackInstagramClick = (location: "footer" | "404_page" | "main") =>
   });
 };
 
+export const trackThreadsClick = (location: "footer" | "404_page" | "main") => {
+  sendGtagEvent("social_media_click", {
+    event_category: "Social Media",
+    event_label: location === "footer" ? "Threads" : `Threads_${location}`,
+    social_platform: "Threads",
+    button_location: location,
+    custom_parameter_1: `threads_${location}`,
+  });
+};
+
 export const trackPerformanceMetric = (metric: string, value: number) => {
   sendGtagEvent("page_load_time", {
     event_category: "performance",

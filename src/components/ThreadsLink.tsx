@@ -1,8 +1,8 @@
 'use client';
 
 import type { ReactNode } from "react";
-import { INSTAGRAM_URL } from "@/lib/constants";
-import { trackInstagramClick } from "@/lib/analytics";
+import { THREADS_URL } from "@/lib/constants";
+import { trackThreadsClick } from "@/lib/analytics";
 
 type Props = {
   location?: "footer" | "404_page" | "main";
@@ -10,30 +10,30 @@ type Props = {
   children?: ReactNode;
 };
 
-export function InstagramLink({
+export function ThreadsLink({
   location = "footer",
   className,
   children,
 }: Props) {
   const handleClick = () => {
-    trackInstagramClick(location);
+    trackThreadsClick(location);
   };
 
   const defaultContent = (
     <>
       <img
-        src="/instagram.png"
-        alt="Instagram"
+        src="/threads.png"
+        alt="Threads"
         className="social-chip-icon"
         loading="lazy"
       />
-      <span className="social-chip-label">인스타그램</span>
+      <span className="social-chip-label">스레드</span>
     </>
   );
 
   return (
     <a
-      href={INSTAGRAM_URL}
+      href={THREADS_URL}
       target="_blank"
       rel="noopener noreferrer"
       className={className}

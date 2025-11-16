@@ -27,6 +27,7 @@ export const STORE_URLS = {
 } as const;
 
 export const INSTAGRAM_URL = "https://www.instagram.com/pollit.official/";
+export const THREADS_URL = "https://www.threads.com/@pollit.official?hl=ko";
 
 export const CONTACT_EMAIL = "hello@pollit.kr";
 export const COMPANY_ADDRESS = "광주광역시 동구 예술길 31-11, 4층 401-38호";

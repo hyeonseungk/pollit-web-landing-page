@@ -82,6 +82,77 @@ body {
   color: #6119e6;
 }
 
+.gnb-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.gnb-menu-toggle:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 3px;
+}
+
+.gnb-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #111;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.gnb-menu-toggle.is-open {
+  background: rgba(97, 25, 230, 0.08);
+}
+
+.gnb-menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.gnb-menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.gnb-menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .gnb-container {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .gnb-menu-toggle {
+    display: inline-flex;
+  }
+
+  .gnb-menu {
+    width: 100%;
+    order: 3;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 12px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: none;
+  }
+
+  .gnb-menu.is-open {
+    display: flex;
+  }
+}
+
 /* Typography */
 h1,
 h2,
@@ -960,9 +1031,17 @@ section {
   padding: 1.5rem 0;
 }
 
+.footer .container {
+  width: 100%;
+  max-width: none;
+  padding-left: clamp(20px, 4vw, 60px);
+  padding-right: clamp(20px, 4vw, 60px);
+}
+
 .company-info {
   margin: 0;
   padding: 1rem 0;
+  width: 100%;
 }
 
 .company-details h4 {
@@ -970,6 +1049,9 @@ section {
   font-size: 0.84rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  border-top: 1px solid #e9ecef;
+  padding-top: 30px;
+  margin-top: 30px;
 }
 
 .info-grid {
@@ -1001,9 +1083,7 @@ section {
 
 /* Social Media */
 .social-media {
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid #e9ecef;
+  margin-top: 20px;
 }
 
 .social-media h4 {
@@ -1022,8 +1102,8 @@ section {
 .social-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
+  gap: 12px;
+  padding: 12px 18px;
   background: #f8f9fa;
   border-radius: 12px;
   text-decoration: none;
@@ -1031,23 +1111,15 @@ section {
   transition: all 0.3s ease;
   font-size: 14px;
   font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .social-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.social-link.instagram:hover {
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  color: white;
+  background: #f5f5f5;
+  border-color: #bbb;
+  color: #333;
 }
 
 .social-link svg {
@@ -1058,6 +1130,19 @@ section {
 
 .social-link span {
   white-space: nowrap;
+}
+
+.social-chip-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.social-chip-label {
+  font-weight: 600;
+  color: #333;
 }
 
 /* Header (for policy pages) */
@@ -1314,8 +1399,7 @@ section {
   }
 
   .social-media {
-    margin-top: 30px;
-    padding-top: 25px;
+    margin-top: 15px;
   }
 
   .social-media h4 {
@@ -1494,10 +1578,13 @@ section {
 
   .company-details h4 {
     font-size: 0.77rem;
+    border-top: 1px solid #e9ecef;
+    padding-top: 24px;
+    margin-top: 24px;
   }
 
   .social-media h4 {
-    font-size: 14px;
+    font-size: 28px;
     text-align: center;
   }
 

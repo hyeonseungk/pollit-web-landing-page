@@ -127,13 +127,13 @@ export default function HomePage() {
             <div className="review-card">
               <div className="stars">★★★★★</div>
               <p>
-                부담없이 매일
+                매일 다양한 직장인 또는 
                 <br />
-                다양한 직장인 또는 전문직 이성들을
+                전문직 이성들을
                 <br />
                 소개받을 수 있어요.
                 <br />
-                저만 알고 싶은 서비스예요. ㅎㅎ
+                저만 알고 싶은 서비스예요.
               </p>
               <div className="reviewer">
                 <picture>
