@@ -44,6 +44,14 @@ export const trackStoreCta = (
   });
 };
 
+export const trackStoreImpression = (location: DownloadLocation) => {
+  sendGtagEvent("app_download_impression", {
+    event_category: "App Download",
+    event_label: `impression_${location}`,
+    button_location: location,
+  });
+};
+
 export const trackInstagramClick = (location: "footer" | "404_page" | "main") => {
   sendGtagEvent("social_media_click", {
     event_category: "Social Media",
@@ -61,6 +69,14 @@ export const trackThreadsClick = (location: "footer" | "404_page" | "main") => {
     social_platform: "Threads",
     button_location: location,
     custom_parameter_1: `threads_${location}`,
+  });
+};
+
+export const trackSectionView = (sectionName: string) => {
+  sendGtagEvent("section_view", {
+    event_category: "engagement",
+    event_label: sectionName,
+    section_name: sectionName,
   });
 };
 

@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { STORE_URLS } from "@/lib/constants";
 import {
   DownloadLocation,
   detectOS,
   trackAppDownload,
+  trackStoreImpression,
   trackStoreCta,
 } from "@/lib/analytics";
 
@@ -59,6 +60,8 @@ const BUTTONS = [
 
 export function StoreButtons({ location, className }: Props) {
   const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const hasTrackedImpression = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -71,6 +74,29 @@ export function StoreButtons({ location, className }: Props) {
 
     return () => mediaQuery.removeEventListener("change", updateMatch);
   }, []);
+
+  useEffect(() => {
+    const target = containerRef.current;
+    if (!target || typeof IntersectionObserver === "undefined") {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTrackedImpression.current) {
+          trackStoreImpression(location);
+          hasTrackedImpression.current = true;
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.unobserve(target);
+    };
+  }, [location]);
 
   const preferredPlatform = useMemo(() => detectOS(), []);
 
@@ -97,7 +123,7 @@ export function StoreButtons({ location, className }: Props) {
   };
 
   return (
-    <div className={className ?? "store-buttons"}>
+    <div ref={containerRef} className={className ?? "store-buttons"}>
       {orderedButtons.map((button) => (
         <a
           key={`${location}-${button.platform}`}

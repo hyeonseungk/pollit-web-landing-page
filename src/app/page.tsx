@@ -3,6 +3,7 @@
 import { StoreButtons } from "@/components/StoreButtons";
 import { Footer } from "@/components/Footer";
 import { Gnb } from "@/components/Gnb";
+import { useSectionView } from "@/hooks/useSectionView";
 
 type PhoneSection = {
   id: string;
@@ -14,6 +15,12 @@ type PhoneSection = {
 };
 
 export default function HomePage() {
+  const heroSectionRef = useSectionView("hero_section");
+  const reviewsSectionRef = useSectionView("reviews_section");
+  const finalCtaSectionRef = useSectionView("final_cta_section", {
+    threshold: 0.3,
+  });
+
   const phoneSections: PhoneSection[] = [
     {
       id: "phone-1",
@@ -42,7 +49,7 @@ export default function HomePage() {
   return (
     <>
       <Gnb />
-      <section className="hero">
+      <section className="hero" ref={heroSectionRef}>
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
@@ -107,7 +114,11 @@ export default function HomePage() {
         );
       })}
 
-      <section className="reviews-section" id="reviews">
+      <section
+        className="reviews-section"
+        id="reviews"
+        ref={reviewsSectionRef}
+      >
         <div className="container">
           <h2 className="section-title">회원님들의 이야기</h2>
           <div className="reviews-grid">
@@ -185,7 +196,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="final-cta">
+      <section className="final-cta" ref={finalCtaSectionRef}>
         <div className="container">
           <div className="cta-content">
             <h2 className="final-cta-title-desktop">늦기 전에 시작하세요</h2>
