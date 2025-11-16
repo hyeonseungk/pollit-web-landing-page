@@ -120,11 +120,7 @@ h3 {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    rgba(248, 247, 255, 0.85) 0%,
-    rgba(232, 223, 244, 0.85) 100%
-  );
+  background: rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   position: relative;
@@ -153,7 +149,7 @@ h3 {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  z-index: -2;
+  z-index: -1;
 }
 
 /* .hero::after {
@@ -180,10 +176,10 @@ h3 {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.45rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   animation: slideInUp 0.8s ease-out both;
 }
 
@@ -193,7 +189,7 @@ h3 {
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #666;
   margin-bottom: 0.1rem;
   animation: slideInUp 0.8s ease-out 0.2s both;
@@ -1053,10 +1049,15 @@ section {
 /* Footer legal links */
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+  }
+
   .hero .container {
     flex-direction: column;
     padding: 0 20px 60px;
     margin: 0 auto;
+    align-items: center;
   }
 
   .hero::before {
@@ -1070,11 +1071,12 @@ section {
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .hero-subtitle {
-    font-size: 1.32rem;
+    font-size: 1.584rem;
   }
 
   .hero-subtitle-desktop {
@@ -1107,6 +1109,14 @@ section {
 
   .final-cta-title-mobile {
     display: block;
+  }
+
+  .hero .cta-buttons {
+    align-items: center;
+  }
+
+  .hero .store-buttons {
+    justify-content: center;
   }
 
   .phone-mockup {
@@ -1215,6 +1225,10 @@ section {
 }
 
 @media (max-width: 480px) {
+  .hero {
+    align-items: flex-start;
+  }
+
   .gnb-container {
     padding: 10px 14px;
   }
@@ -1225,6 +1239,7 @@ section {
   }
   .hero .container {
     padding: 0 15px 50px;
+    align-items: flex-start;
   }
 
   .hero::before {
@@ -1236,11 +1251,12 @@ section {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.44rem;
   }
 
   .hero-subtitle-desktop {

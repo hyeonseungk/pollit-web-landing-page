@@ -23,12 +23,12 @@ export default function HomePage() {
               <p className="hero-subtitle hero-subtitle-desktop">
                 믿을 수 있는 직장인들만
                 <br />
-                과금없는 편안한 인연찾기의 시작
+                과금없는 편안한 인연찾기
               </p>
               <p className="hero-subtitle hero-subtitle-mobile">
                 믿을 수 있는 직장인들만
                 <br />
-                과금없는 편안한 인연찾기의 시작
+                과금없는 편안한 인연찾기
               </p>
               <div className="cta-buttons">
                 <StoreButtons location="hero" />
