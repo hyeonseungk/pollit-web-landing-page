@@ -188,9 +188,9 @@ export default function HomePage() {
               시작하세요
             </h2>
             <p>
-              매일 내 인연을 찾다보면
+              꾸준히 내 인연을 찾다보면
               <br />
-              언젠가 그 사람이 내 옆에 있을 거예요.
+              그 사람이 곧 내 옆에 있을 거예요
             </p>
             <div className="cta-buttons">
               <StoreButtons

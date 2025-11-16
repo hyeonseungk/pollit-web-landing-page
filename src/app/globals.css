@@ -812,6 +812,14 @@ section {
   background: white;
 }
 
+.reviews-section {
+  padding: 80px 0;
+}
+
+.reviews-section .container {
+  height: 100%;
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -861,6 +869,12 @@ section {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e0e0e0;
+}
+
+@media (min-width: 1025px) {
+  .reviews-section {
+    padding: 96px 0;
+  }
 }
 
 /* Final CTA */
