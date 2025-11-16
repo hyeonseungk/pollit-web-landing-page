@@ -120,7 +120,7 @@ h3 {
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   position: relative;
@@ -176,7 +176,7 @@ h3 {
 }
 
 .hero-title {
-  font-size: 2.45rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0.75rem;
@@ -1058,6 +1058,8 @@ section {
     padding: 0 20px 60px;
     margin: 0 auto;
     align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .hero::before {
@@ -1068,10 +1070,13 @@ section {
   .hero-content {
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 0.75rem;
   }
 
@@ -1251,7 +1256,7 @@ section {
   }
 
   .hero-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 0.75rem;
   }
 
