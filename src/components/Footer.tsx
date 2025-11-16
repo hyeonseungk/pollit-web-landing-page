@@ -15,7 +15,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="company-info">
-          <div className="social-media">
+          <div className="social-media" id="sns">
             <h4>폴잇과 함께하세요</h4>
             <div className="social-links">
               <InstagramLink className="social-link instagram" />

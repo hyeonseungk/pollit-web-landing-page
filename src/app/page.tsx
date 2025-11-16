@@ -4,10 +4,20 @@ import { StoreButtons } from "@/components/StoreButtons";
 import { Footer } from "@/components/Footer";
 import { Gnb } from "@/components/Gnb";
 
+type PhoneSection = {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  imageAlt: string;
+  anchorId?: string;
+};
+
 export default function HomePage() {
-  const phoneSections = [
+  const phoneSections: PhoneSection[] = [
     {
       id: "phone-1",
+      anchorId: "features",
       title: "믿을 수 있는 직장인만",
       subtitle: "안심하고 시작하세요",
       image: "/phone1.png",
@@ -37,7 +47,7 @@ export default function HomePage() {
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
-                직장인을 위한
+                이때까지 없던
                 <br />
                 <span className="hero-title-accent">
                   <span className="highlight">착한</span> 소개팅앱
@@ -45,12 +55,12 @@ export default function HomePage() {
                 <span className="hero-title-accent">폴잇</span>
               </h1>
               <p className="hero-subtitle hero-subtitle-desktop">
-                믿을 수 있는 직장인들만
+                직장인 솔로들의
                 <br />
                 과금없는 편안한 인연찾기
               </p>
               <p className="hero-subtitle hero-subtitle-mobile">
-                믿을 수 있는 직장인들만
+              직장인 솔로들의
                 <br />
                 과금없는 편안한 인연찾기
               </p>
@@ -68,6 +78,7 @@ export default function HomePage() {
         return (
           <section
             key={section.id}
+            id={section.anchorId ?? section.id}
             className={`phone-section ${section.id}`}
             aria-labelledby={`${section.id}-title`}
           >
@@ -96,9 +107,9 @@ export default function HomePage() {
         );
       })}
 
-      <section className="reviews-section">
+      <section className="reviews-section" id="reviews">
         <div className="container">
-          <h2 className="section-title">사용자들의 이야기</h2>
+          <h2 className="section-title">회원님들의 이야기</h2>
           <div className="reviews-grid">
             <div className="review-card">
               <div className="stars">★★★★★</div>
@@ -151,15 +162,11 @@ export default function HomePage() {
             <div className="review-card">
               <div className="stars">★★★★★</div>
               <p>
-                상대방의 가치관과 성향 설문조사
+                상대방의 가치관 설문내용을
                 <br />
-                응답을 보여주니까 좋아요.
+                보여주니까 좋아요.
                 <br />
-                서로 잘 통할지도
-                <br />
-                폴잇AI가 솔직하게 알려주니까
-                <br />
-                도움이 돼요.
+                이 모든 게 무료라니 너무 좋아요.
               </p>
               <div className="reviewer">
                 <picture>
