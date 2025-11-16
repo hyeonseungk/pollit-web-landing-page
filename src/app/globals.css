@@ -152,6 +152,152 @@ h3 {
   z-index: -1;
 }
 
+/* Phone Feature Sections */
+.phone-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(60px, 12vw, 140px) 0;
+}
+
+.phone-section.phone-1 {
+  background: #fff;
+}
+
+.phone-section.phone-2 {
+  background: #6119e6;
+}
+
+.phone-section.phone-3 {
+  background: #fdf8ff;
+}
+
+.phone-section .container {
+  width: 100%;
+  display: flex;
+}
+
+.phone-section-inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 6vw, 120px);
+}
+
+.phone-section-inner.reverse {
+  flex-direction: row-reverse;
+}
+
+.phone-section-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.phone-section-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  margin-bottom: 0.5rem;
+  color: #111;
+  font-weight: 700;
+  width: 100%;
+}
+
+.phone-section-subtitle {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #5f5f6e;
+  font-weight: 500;
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.phone-section.phone-2 .phone-section-title {
+  color: #fff;
+}
+
+.phone-section.phone-2 .phone-section-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.phone-section-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.phone-main-image {
+  width: min(520px, 90vw);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transform: translateX(12px);
+}
+
+.phone-helper-image {
+  position: absolute;
+  inset: 0;
+  width: min(520px, 90vw);
+  margin: 0 auto;
+  transform: translate(28px, 16px) rotate(4deg);
+  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35));
+  z-index: 0;
+}
+
+.phone-section-image.has-helper .phone-main-image {
+  z-index: 1;
+  transform: translateX(-12px);
+  filter: drop-shadow(0 30px 45px rgba(23, 15, 57, 0.2));
+}
+
+@media (max-width: 1024px) {
+  .phone-section-inner {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .phone-section-inner,
+  .phone-section-inner.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .phone-section {
+    padding: 80px 0;
+  }
+
+  .phone-section-title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .phone-section-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .phone-section-text {
+    order: -1;
+    align-items: center;
+    width: 100%;
+  }
+
+  .phone-main-image {
+    transform: translateX(6px);
+  }
+
+  .phone-helper-image {
+    width: 85%;
+    transform: translate(16px, 10px) rotate(3deg);
+  }
+
+  .phone-section-image.has-helper .phone-main-image {
+    width: 85%;
+    transform: translateX(-6px);
+  }
+}
+
 /* .hero::after {
   content: "";
   position: absolute;

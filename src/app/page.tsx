@@ -5,6 +5,32 @@ import { Footer } from "@/components/Footer";
 import { Gnb } from "@/components/Gnb";
 
 export default function HomePage() {
+  const phoneSections = [
+    {
+      id: "phone-1",
+      title: "믿을 수 있는 직장인만",
+      subtitle: "안심하고 시작하세요",
+      image: "/phone1.png",
+      imageAlt: "믿을 수 있는 직장인만 만날 수 있는 화면",
+      helperImage: "/phone-1-helper.png",
+      helperImageAlt: "직장인 인증 과정을 보여주는 보조 화면",
+    },
+    {
+      id: "phone-2",
+      title: "결이 맞는 사람을 찾아요",
+      subtitle: "가치관이 맞아야 행복해요",
+      image: "/phone2.png",
+      imageAlt: "가치관을 확인할 수 있는 소개 화면",
+    },
+    {
+      id: "phone-3",
+      title: "설레는 대화로  시작해요",
+      subtitle: "사소한 시작이 인생의 인연으로",
+      image: "/phone3.png",
+      imageAlt: "대화를 이어가는 채팅 화면",
+    },
+  ];
+
   return (
     <>
       <Gnb />
@@ -37,6 +63,54 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {phoneSections.map((section, index) => {
+        const isReversed = index % 2 === 1;
+
+        return (
+          <section
+            key={section.id}
+            className={`phone-section ${section.id}`}
+            aria-labelledby={`${section.id}-title`}
+          >
+            <div className="container">
+              <div
+                className={`phone-section-inner${
+                  isReversed ? " reverse" : ""
+                }`}
+              >
+                <div className="phone-section-text">
+                  <h2 id={`${section.id}-title`} className="phone-section-title">
+                    {section.title}
+                  </h2>
+                  <p className="phone-section-subtitle">{section.subtitle}</p>
+                </div>
+                <div
+                  className={`phone-section-image${
+                    section.helperImage ? " has-helper" : ""
+                  }`}
+                >
+                  {section.helperImage && (
+                    <img
+                      src={section.helperImage}
+                      alt={section.helperImageAlt}
+                      className="phone-helper-image"
+                      loading="lazy"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <img
+                    src={section.image}
+                    alt={section.imageAlt}
+                    className="phone-main-image"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       <section className="reviews-section">
         <div className="container">
