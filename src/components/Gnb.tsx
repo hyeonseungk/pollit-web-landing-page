@@ -23,6 +23,7 @@ export function Gnb() {
   const policyMenuItems: MenuItem[] = [
     { label: "서비스 약관", href: "/term-service" },
     { label: "개인정보 처리방침", href: "/term-privacy" },
+    { label: "데이터 삭제 요청", href: "/delete-my-data" },
   ];
 
   const handleToggleMenu = () => {
