@@ -343,6 +343,7 @@ h3 {
 
 .final-cta-title-mobile {
   display: none;
+  line-height: 1.2;
 }
 
 @keyframes slideInUp {
@@ -888,10 +889,10 @@ section {
   color: white;
   text-align: center;
   overflow: hidden;
-  min-height: 60vh;
+  min-height: 72vh;
   display: flex;
   align-items: center;
-  padding: 80px 0;
+  padding: 96px 0;
 }
 
 .final-cta::before {
@@ -966,7 +967,7 @@ section {
 
 .company-details h4 {
   color: #6119e6;
-  font-size: 1.2rem;
+  font-size: 0.84rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -1492,7 +1493,7 @@ section {
   }
 
   .company-details h4 {
-    font-size: 1.1rem;
+    font-size: 0.77rem;
   }
 
   .social-media h4 {
