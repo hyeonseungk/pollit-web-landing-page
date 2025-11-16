@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { STORE_URLS } from "@/lib/constants";
 import {
   DownloadLocation,
@@ -58,10 +58,24 @@ const BUTTONS = [
 ];
 
 export function StoreButtons({ location, className }: Props) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const updateMatch = () => setIsMobile(mediaQuery.matches);
+
+    updateMatch();
+    mediaQuery.addEventListener("change", updateMatch);
+
+    return () => mediaQuery.removeEventListener("change", updateMatch);
+  }, []);
+
   const preferredPlatform = useMemo(() => detectOS(), []);
 
   const orderedButtons = useMemo(() => {
-    if (preferredPlatform === "unknown") {
+    if (isMobile || preferredPlatform === "unknown") {
       return BUTTONS;
     }
 
@@ -70,7 +84,7 @@ export function StoreButtons({ location, className }: Props) {
       if (b.platform === preferredPlatform) return 1;
       return 0;
     });
-  }, [preferredPlatform]);
+  }, [isMobile, preferredPlatform]);
 
   const handleClick = (platform: "ios" | "android") => () => {
     trackAppDownload(platform, location);
