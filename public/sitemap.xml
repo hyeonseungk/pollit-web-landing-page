@@ -7,9 +7,25 @@
     <!-- Main landing page -->
     <url>
         <loc>https://pollit.kr/</loc>
-        <lastmod>2025-07-13</lastmod>
+        <lastmod>2025-11-16</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- Terms of service -->
+    <url>
+        <loc>https://pollit.kr/term-service</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Privacy policy -->
+    <url>
+        <loc>https://pollit.kr/term-privacy</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     
 </urlset> 

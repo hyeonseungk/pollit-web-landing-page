@@ -6,10 +6,13 @@ import { StructuredDataScripts } from "@/components/StructuredDataScripts";
 import { DESCRIPTION, KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const PAGE_TITLE =
-  "폴잇 | 직장인&전문직 블라인드 소개팅앱으로 진짜 연애 상대 찾기 - 결정사 대신 스마트한 소개팅 매칭 서비스";
+  "폴잇 | 직장인 솔로를 위한 착한 가치관 소개팅앱 - 과금없는 블라인드 매칭 서비스";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
   title: {
     default: PAGE_TITLE,
     template: "%s | 폴잇",
@@ -22,13 +25,20 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
+    locale: "ko_KR",
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "폴잇 - 직장인&전문직 블라인드 소개팅앱",
+        alt: "이때까지 없던 착한 소개팅앱 폴잇",
+      },
+      {
+        url: "/og-image.png",
+        width: 600,
+        height: 315,
+        alt: "직장인 솔로를 위한 가치관 소개팅앱 폴잇",
       },
     ],
   },

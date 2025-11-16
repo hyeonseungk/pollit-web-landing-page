@@ -1,9 +1,11 @@
 User-agent: *
 Allow: /
-Allow: /public/
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
 
 # Sitemap location
 Sitemap: https://pollit.kr/sitemap.xml
 
-# Optional: Crawl-delay (in seconds) to be respectful to servers
-Crawl-delay: 1 
+# Updated: 2025-11-16
