@@ -193,6 +193,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  max-width: 520px;
 }
 
 .phone-section-title {
@@ -201,6 +202,7 @@ h3 {
   color: #111;
   font-weight: 700;
   width: 100%;
+  white-space: nowrap;
 }
 
 .phone-section-subtitle {
@@ -224,36 +226,22 @@ h3 {
   flex: 1;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
-.phone-main-image {
-  width: min(520px, 90vw);
+.phone-section-image img {
+  width: min(416px, 72vw);
   height: auto;
   display: block;
   margin: 0 auto;
-  transform: translateX(12px);
-}
-
-.phone-helper-image {
-  position: absolute;
-  inset: 0;
-  width: min(520px, 90vw);
-  margin: 0 auto;
-  transform: translate(28px, 16px) rotate(4deg);
-  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35));
-  z-index: 0;
-}
-
-.phone-section-image.has-helper .phone-main-image {
-  z-index: 1;
-  transform: translateX(-12px);
-  filter: drop-shadow(0 30px 45px rgba(23, 15, 57, 0.2));
 }
 
 @media (max-width: 1024px) {
   .phone-section-inner {
     gap: 48px;
+  }
+
+  .phone-section-title {
+    white-space: normal;
   }
 }
 
@@ -287,14 +275,8 @@ h3 {
     transform: translateX(6px);
   }
 
-  .phone-helper-image {
-    width: 85%;
-    transform: translate(16px, 10px) rotate(3deg);
-  }
-
-  .phone-section-image.has-helper .phone-main-image {
-    width: 85%;
-    transform: translateX(-6px);
+  .phone-section-image img {
+    width: 75%;
   }
 }
 

@@ -12,8 +12,6 @@ export default function HomePage() {
       subtitle: "안심하고 시작하세요",
       image: "/phone1.png",
       imageAlt: "믿을 수 있는 직장인만 만날 수 있는 화면",
-      helperImage: "/phone-1-helper.png",
-      helperImageAlt: "직장인 인증 과정을 보여주는 보조 화면",
     },
     {
       id: "phone-2",
@@ -85,24 +83,10 @@ export default function HomePage() {
                   </h2>
                   <p className="phone-section-subtitle">{section.subtitle}</p>
                 </div>
-                <div
-                  className={`phone-section-image${
-                    section.helperImage ? " has-helper" : ""
-                  }`}
-                >
-                  {section.helperImage && (
-                    <img
-                      src={section.helperImage}
-                      alt={section.helperImageAlt}
-                      className="phone-helper-image"
-                      loading="lazy"
-                      aria-hidden="true"
-                    />
-                  )}
+                <div className="phone-section-image">
                   <img
                     src={section.image}
                     alt={section.imageAlt}
-                    className="phone-main-image"
                     loading="lazy"
                   />
                 </div>
