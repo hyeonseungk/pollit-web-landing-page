@@ -13,6 +13,11 @@ import { ThreadsLink } from "@/components/ThreadsLink";
 const policyLinks = [
   { label: "서비스 약관", href: "/term-service" },
   { label: "개인정보 처리방침", href: "/term-privacy" },
+  {
+    label: "고객센터",
+    href: "https://open.kakao.com/o/skVEvBbg",
+    external: true,
+  },
 ];
 
 export function Footer() {
@@ -52,9 +57,14 @@ export function Footer() {
               </div>
             </div>
             <div className="policy-links">
-              {policyLinks.map((link) => (
-                <Link key={link.label} href={link.href}>
-                  {link.label}
+              {policyLinks.map(({ label, href, external }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                >
+                  {label}
                 </Link>
               ))}
             </div>

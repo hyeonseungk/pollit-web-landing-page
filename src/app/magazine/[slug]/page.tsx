@@ -9,9 +9,9 @@ import {
 } from "@/content/magazinePosts";
 
 type PageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 const formatDate = (dateString: string) =>
@@ -25,8 +25,11 @@ export function generateStaticParams() {
   return magazinePosts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const post = getMagazinePostBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getMagazinePostBySlug(slug);
 
   if (!post) {
     return {
@@ -40,8 +43,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function MagazineDetailPage({ params }: PageProps) {
-  const post = getMagazinePostBySlug(params.slug);
+export default async function MagazineDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getMagazinePostBySlug(slug);
 
   if (!post) {
     notFound();

@@ -37,9 +37,7 @@ export default function NotFoundPage() {
           404
         </p>
         <h1 className="not-found-title">
-          입력하신 주소가 잘못되었거나
-          <br />
-          페이지가 삭제되었습니다.
+          입력하신 주소가 잘못되었거나<br />페이지가 삭제되었습니다.
         </h1>
         <p className="not-found-description">
           필요한 정보는 홈에서 가장 빠르게 찾을 수 있어요.

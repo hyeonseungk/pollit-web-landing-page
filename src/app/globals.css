@@ -2024,6 +2024,7 @@ section {
   color: #150b2f;
   line-height: 1.35;
   margin-bottom: 16px;
+  word-break: keep-all;
 }
 
 .not-found-description {
