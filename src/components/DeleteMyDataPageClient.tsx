@@ -173,9 +173,6 @@ export function DeleteMyDataPageClient() {
                 >
                   {submitState === "loading" ? "요청 보내는 중..." : "삭제 요청 보내기"}
                 </button>
-                <p className="data-delete-helper">
-                  버튼을 누르면 입력한 정보가 바로 삭제 요청 API로 전송됩니다.
-                </p>
                 {feedbackMessage && (
                   <p
                     className={`data-delete-feedback ${
