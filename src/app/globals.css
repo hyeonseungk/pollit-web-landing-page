@@ -1439,6 +1439,27 @@ section {
   margin: 0;
 }
 
+.magazine-detail-content figure {
+  margin: clamp(24px, 4vw, 40px) 0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(36, 22, 83, 0.08);
+  overflow: hidden;
+  text-align: center;
+}
+
+.magazine-detail-content img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.magazine-detail-content figcaption {
+  padding: 18px 24px 24px;
+  font-size: 0.95rem;
+  color: #6a6183;
+}
+
 @media (max-width: 768px) {
   .magazine-grid {
     grid-template-columns: 1fr;

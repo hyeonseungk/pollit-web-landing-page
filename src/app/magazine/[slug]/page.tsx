@@ -8,6 +8,9 @@ import {
   magazinePosts,
 } from "@/content/magazinePosts";
 
+const IMAGE_MARKER_REGEX =
+  /^\[\[\s*image\s*\|\s*([^\|\]]+)(?:\|\s*([^|\]]*))?(?:\|\s*([^|\]]*))?\s*\]\]$/i;
+
 type PageProps = {
   params: Promise<{
     slug: string;
@@ -51,6 +54,30 @@ export default async function MagazineDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const renderContentBlock = (block: string, index: number) => {
+    const match = IMAGE_MARKER_REGEX.exec(block.trim());
+
+    if (match) {
+      const [, src, alt = "", caption = ""] = match;
+
+      return (
+        <figure
+          key={`${post.slug}-image-${index}`}
+          className="magazine-detail-image"
+        >
+          <img src={src} alt={alt || post.title} loading="lazy" />
+          {caption && <figcaption>{caption}</figcaption>}
+        </figure>
+      );
+    }
+
+    return (
+      <p key={`${post.slug}-paragraph-${index}`}>
+        {block}
+      </p>
+    );
+  };
+
   return (
     <div className="magazine-detail-page">
       <Gnb />
@@ -62,9 +89,7 @@ export default async function MagazineDetailPage({ params }: PageProps) {
             <span>{formatDate(post.publishedAt)}</span>
           </div>
           <div className="magazine-detail-content">
-            {post.content.map((paragraph, index) => (
-              <p key={`${post.slug}-paragraph-${index}`}>{paragraph}</p>
-            ))}
+            {post.content.map((block, index) => renderContentBlock(block, index))}
           </div>
         </div>
       </main>

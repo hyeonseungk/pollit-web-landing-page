@@ -26,11 +26,10 @@ export default function MagazinePage() {
         <section className="magazine-hero">
           <div className="container">
             <p className="magazine-hero-eyebrow">폴잇 매거진</p>
-            <h1>연애와 결혼 사이, 마음의 속도를 맞추는 이야기</h1>
+            <h1>내 인연을 찾아 떠나는 여행</h1>
             <p>
-              직장인 솔로를 만나온 폴잇 매칭팀이 전하는 경험과 인사이트를
-              모았어요. 마음의 방향을 정리하고 싶은 날, 매거진에서 가벼운
-              영감을 받아보세요.
+              좋은 인연을 만나는 건, 의지의 영역이기도 하고 운의 영역이기도 해요.<br />
+              그 중요하고 감성적인 당신의 여행을 폴잇이 응원합니다.
             </p>
           </div>
         </section>
