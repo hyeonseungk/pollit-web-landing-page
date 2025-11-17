@@ -1245,6 +1245,26 @@ section {
   text-align: left;
 }
 
+.policy-bottom-action {
+  max-width: 800px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.policy-bottom-link {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.policy-bottom-link:hover {
+  color: #6b7280;
+  text-decoration: underline;
+}
+
 .policy-placeholder {
   color: #666;
   font-size: 1rem;
