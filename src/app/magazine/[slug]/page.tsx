@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -54,6 +55,11 @@ export default async function MagazineDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const contentBlocks = post.content
+    .split(/\r?\n\s*\r?\n+/)
+    .map((block) => block.trim())
+    .filter((block) => block.length > 0);
+
   const renderContentBlock = (block: string, index: number) => {
     const match = IMAGE_MARKER_REGEX.exec(block.trim());
 
@@ -71,9 +77,18 @@ export default async function MagazineDetailPage({ params }: PageProps) {
       );
     }
 
+    const lines = block.split(/\r?\n/);
+
     return (
       <p key={`${post.slug}-paragraph-${index}`}>
-        {block}
+        {lines.map((line, lineIndex) => (
+          <Fragment
+            key={`${post.slug}-paragraph-${index}-line-${lineIndex}`}
+          >
+            {line}
+            {lineIndex < lines.length - 1 && <br />}
+          </Fragment>
+        ))}
       </p>
     );
   };
@@ -89,7 +104,9 @@ export default async function MagazineDetailPage({ params }: PageProps) {
             <span>{formatDate(post.publishedAt)}</span>
           </div>
           <div className="magazine-detail-content">
-            {post.content.map((block, index) => renderContentBlock(block, index))}
+            {contentBlocks.map((block, index) =>
+              renderContentBlock(block, index),
+            )}
           </div>
         </div>
       </main>

@@ -40,7 +40,7 @@ export default function MagazinePage() {
               {magazinePosts.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/magazine/${post.slug}`}
+                  href={`/magazine/${encodeURIComponent(post.slug)}`}
                   className="magazine-card"
                 >
                   <div className="magazine-card-body">
