@@ -18,6 +18,7 @@ export function Gnb() {
     { label: "폴잇이 좋은 이유", href: "/#features", hash: "#features" },
     { label: "후기", href: "/#reviews", hash: "#reviews" },
     { label: "SNS", href: "/#sns", hash: "#sns" },
+    { label: "매거진", href: "/magazine" },
   ];
 
   const handleToggleMenu = () => {
