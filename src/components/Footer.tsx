@@ -10,6 +10,11 @@ import {
 import { InstagramLink } from "@/components/InstagramLink";
 import { ThreadsLink } from "@/components/ThreadsLink";
 
+const policyLinks = [
+  { label: "서비스 약관", href: "/term-service" },
+  { label: "개인정보 처리방침", href: "/term-privacy" },
+];
+
 export function Footer() {
   return (
     <footer className="footer">
@@ -45,6 +50,13 @@ export function Footer() {
                 <span className="label">주소</span>
                 <span className="value">{COMPANY_ADDRESS}</span>
               </div>
+            </div>
+            <div className="policy-links">
+              {policyLinks.map((link) => (
+                <Link key={link.label} href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

@@ -20,12 +20,6 @@ export function Gnb() {
     { label: "SNS", href: "/#sns", hash: "#sns" },
   ];
 
-  const policyMenuItems: MenuItem[] = [
-    { label: "서비스 약관", href: "/term-service" },
-    { label: "개인정보 처리방침", href: "/term-privacy" },
-    { label: "데이터 삭제 요청", href: "/delete-my-data" },
-  ];
-
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -80,15 +74,6 @@ export function Gnb() {
               key={item.label}
               href={item.href}
               onClick={(event) => handleMenuItemClick(event, item)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          {policyMenuItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={handleNavigate}
             >
               {item.label}
             </Link>
