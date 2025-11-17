@@ -20,12 +20,17 @@
    - 헤드라인: "늦기 전에 시작하세요"
    - 메시지: 꾸준한 활동 → 진짜 인연에 만남 유도
    - StoreButtons 컴포넌트로 앱 다운로드 유도
+5. **매거진 허브**
+   - 메시지: "폴잇 매거진 - 진짜 연애/결혼 인사이트"
+   - 시각 요소: 연애·결혼 감성 일러스트, 카드형 목록과 상세 뷰
+   - 콘텐츠: 연애/결혼 팁, 가치관 스토리텔링, 앱 활용 맥락 강조
 
 ## 서비스 특징 요약
 - 직장인증 기반 안전한 블라인드 소개팅
 - 가치관/성향 설문 데이터로 진짜 결이 맞는 상대 추천
 - 과금 부담 없이 시작할 수 있는 착한 소개팅앱
 - 매일 새로운 직장인·전문직 이성 큐레이션
+- 폴잇 매거진을 통한 연애·결혼 인사이트 및 서비스 활용 팁 제공
 
 ## 신뢰 요소
 - 회원 후기(5.0/5.0)와 실사용 대화 스크린샷
@@ -36,6 +41,7 @@
 - iOS: https://apps.apple.com/kr/app/pollit-%ED%8F%B4%EC%9E%87-%EA%B0%80%EC%B9%98%EA%B4%80-%EB%B0%8F-%EC%84%B1%ED%96%A5-%EA%B8%B0%EB%B0%98-%EC%86%8C%EA%B0%9C%ED%8C%85%EC%95%B1/id6478050884
 - Android: https://play.google.com/store/apps/details?id=com.pollitapp
 - Instagram: https://www.instagram.com/pollit.official/
+- Magazine: https://pollit.kr/magazine
 
 ## 운영 주체 및 연락처
 - 법인명: (주)커넥션밸류 / 대표: 김현승
@@ -46,3 +52,4 @@
 ## 기술 및 SEO 메모
 - Next.js 기반 정적 랜딩, Schema.org 구조화 데이터, GA4 연동
 - Sitemap 및 robots.txt 제공, Open Graph / Twitter Card 메타 태그 최신화
+- /magazine 및 /magazine/[slug] 정적 페이지, canonical 및 내부 링크 연동 완료
