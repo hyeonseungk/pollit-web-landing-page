@@ -603,8 +603,6 @@ h3 {
   font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .phone-mockup {

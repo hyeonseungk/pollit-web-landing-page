@@ -168,9 +168,11 @@ export function HomePageClient() {
               <p>
                 상대방의 가치관 설문내용을
                 <br />
-                보여주니까 좋아요.
+                보여주니까 진지한 마음이 생겨요.
                 <br />
-                이 모든 게 무료라니 너무 좋아요.
+                제가 어떤 사람인지도
+                <br />
+                차분히 돌아보게 돼요.
               </p>
               <div className="reviewer">
                 <picture>
