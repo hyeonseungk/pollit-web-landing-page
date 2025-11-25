@@ -1,10 +1,10 @@
 export const SITE_NAME = "폴잇";
-export const SITE_URL = "https://pollit.kr";
+export const SITE_URL = "https://www.pollit.kr";
 export const COMPANY_NAME = "(주)커넥션밸류";
 export const COMPANY_LEGAL_NAME = "커넥션밸류";
 
 export const DESCRIPTION =
-  "직장인 솔로들을 위한 착한 소개팅앱 폴잇. 직장인증을 통과한 직장인·전문직 이성과 가치관·성향 설문을 기반으로 과금 없이 진짜 결이 맞는 상대를 찾아보세요.";
+  "직장인 솔로들을 위한 착한 소개팅앱 폴잇. 직장인증을 통과한 직장인·전문직 이성과 가치관·성향 설문을 기반으로 과금없이 진짜 결이 맞는 상대를 찾아보세요.";
 
 export const KEYWORDS = [
   "직장인 소개팅앱",

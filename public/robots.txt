@@ -6,6 +6,6 @@ User-agent: GPTBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://pollit.kr/sitemap.xml
+Sitemap: https://www.pollit.kr/sitemap.xml
 
 # Updated: 2025-11-17 (magazine sitemap entries 포함)

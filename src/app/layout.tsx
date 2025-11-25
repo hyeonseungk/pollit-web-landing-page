@@ -6,7 +6,7 @@ import { StructuredDataScripts } from "@/components/StructuredDataScripts";
 import { DESCRIPTION, KEYWORDS, SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const PAGE_TITLE =
-  "폴잇 | 직장인 솔로를 위한 착한 가치관 소개팅앱 - 과금없는 블라인드 매칭 서비스";
+  "직장인 솔로를 위한 착한 소개팅앱, 폴잇";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
