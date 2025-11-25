@@ -29,16 +29,16 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image-big.jpg",
         width: 1200,
         height: 630,
-        alt: "이때까지 없던 착한 소개팅앱 폴잇",
+        alt: "직장인 솔로를 위한 착한 소개팅앱, 폴잇",
       },
       {
-        url: "/og-image.png",
+        url: "/og-image-small.jpg",
         width: 600,
         height: 315,
-        alt: "직장인 솔로를 위한 가치관 소개팅앱 폴잇",
+        alt: "직장인 솔로를 위한 착한 소개팅앱, 폴잇",
       },
     ],
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: DESCRIPTION,
-    images: ["/og-image.png"],
+    images: ["/og-image-big.jpg"],
   },
   robots: {
     index: true,
